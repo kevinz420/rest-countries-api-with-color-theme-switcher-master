@@ -1,0 +1,98 @@
+@import '../App.css';
+
+.container {
+    margin: 40px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.light-mode .search input::placeholder, .light-mode .search input, .light-mode .search-icon, .light-mode #dropdown, .light-mode #item{
+    color: var(--light-input)
+}
+
+.dark-mode .search input::placeholder, .dark-mode .search input, .dark-mode .search-icon, .dark-mode #dropdown, .dark-mode #item{
+    color: var(--dark-text)
+}
+
+.light-mode .search, .light-mode .search input, .light-mode #dropdown, .light-mode #menu{
+    background-color: var(--dark-text);
+}
+
+.dark-mode .search, .dark-mode .search input, .dark-mode #dropdown, .dark-mode #menu{
+    background-color: var(--dark-element);
+}
+
+.light-mode .search, .light-mode #dropdown, .light-mode #menu {
+    box-shadow: 0 0 10px  var(--light-glow);
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    height: 50px; 
+    border-radius: 5px;
+}
+
+.search-icon {
+    margin: 0px 20px;
+}
+
+.search input {
+    border: none;
+    width: 80%;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+#dropdown {
+    border: none;
+    background: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+#dropdown::after {
+    display: inline-block;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 5px;
+    padding: 20px 0px;
+}
+
+#item {
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+#item:hover {
+    border-radius: 5px;
+}
+
+.light-mode #item:hover {
+    background-color: var(--light-background);
+}
+
+.dark-mode #item:hover {
+    background-color: var(--dark-background);
+}

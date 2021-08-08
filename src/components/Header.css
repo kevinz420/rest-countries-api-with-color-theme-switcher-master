@@ -1,0 +1,26 @@
+@import '../App.css';
+
+.header {
+    justify-content: space-between;
+    padding: 0px 100px;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.header.light-mode {
+    color: var(--light-text);
+    background-color: var(--dark-text);
+    border-bottom: 5px solid var(--light-glow);
+}
+
+.header.dark-mode {
+    color: var(--dark-text);
+    background-color: var(--dark-element);
+    border-bottom: 5px solid var(--dark-element);
+}
