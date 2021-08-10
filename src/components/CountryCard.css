@@ -1,0 +1,44 @@
+@import '../App.css';
+
+.light-mode .card {
+    background-color: var(--dark-text);
+    box-shadow: 0 0 10px  var(--light-glow);
+}
+
+.dark-mode .card {
+    background-color: var(--dark-element);
+}
+
+.card {
+    width: 265px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 30px 0;
+    cursor: pointer;
+}
+
+.card img {
+    object-fit: cover;
+    height: 170px;
+}
+
+.card-body {
+    padding: 0px 30px 40px 30px;
+}
+
+.card-details {
+    list-style-type: none;
+}
+
+.card-details li {
+    display: flex;
+    flex-direction: row;
+    padding: 4px 0px;
+}
+
+.card-details, .card-details h4, .card-details p {
+    padding: 0px;
+    margin: 0px;
+}
