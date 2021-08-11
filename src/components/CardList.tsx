@@ -15,7 +15,7 @@ export const CardList: React.FC<CardListProps> = ({data}) => {
     
     return (
         <div className="card-list">
-            {data.map((entry: RestCountries) => {
+            {data.map(entry => {
                 return <CountryCardRouter key={uuidv4()} data={entry}/>
             })}
         </div>

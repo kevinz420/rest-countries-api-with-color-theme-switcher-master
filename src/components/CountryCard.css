@@ -28,10 +28,6 @@
     padding: 0px 30px 40px 30px;
 }
 
-.card-details {
-    list-style-type: none;
-}
-
 .card-details li {
     display: flex;
     flex-direction: row;

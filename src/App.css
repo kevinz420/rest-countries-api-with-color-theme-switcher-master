@@ -60,3 +60,7 @@
 .light-mode .button {
   box-shadow: 0 0 10px  var(--light-glow);
 }
+
+ul {
+  list-style: none;
+}

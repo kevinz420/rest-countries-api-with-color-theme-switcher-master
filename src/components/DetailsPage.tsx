@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router-dom'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { RestCountries } from '../types';
+import { v4 as uuidv4 } from 'uuid';
 import './DetailsPage.css'
 
 interface DetailsPageProps extends RouteComponentProps<{code: 'string'}> {}
@@ -90,52 +91,60 @@ export const DetailsPage: React.FC<DetailsPageProps> = ({match, history}) => {
 
     return (
       <div className="container details-page">
-        <button className="button" onClick={() => history.push("/")}>
+        <button className="back-button button" onClick={() => history.push("/")}>
           <FontAwesomeIcon icon={faArrowLeft}/>
           <h3>Back</h3>
         </button>
         <div className="info">
           <img src={data.flag} alt=""/>
-          <div className="details">
+          <div>
             <h2>{data.name}</h2>
-            <ul className='card-details'>
-              <li>
-                  <h4>Native Name:&nbsp;</h4>
-                  <p>{data.nativeName}</p>
-              </li>
-              <li>
-                  <h4>Population:&nbsp;</h4>
-                  <p>{newPop}</p>
-              </li>
-              <li>
-                  <h4>Region:&nbsp;</h4>
-                  <p>{data.region}</p>
-              </li>
-              <li>
-                  <h4>Sub Region:&nbsp;</h4>
-                  <p>{data.subregion}</p>
-              </li>
-              <li>
-                  <h4>Capital:&nbsp;</h4>
-                  <p>{data.capital}</p>
-              </li>
-              <li>
-                  <h4>Top Level Domain:&nbsp;</h4>
-                  <p>{data.topLevelDomain[0]}</p>
-              </li>
-              <li>
-                  <h4>Currencies:&nbsp;</h4>
-                  <p>{data.currencies.map(currency => currency.name).join(', ')}</p>
-              </li>
-              <li>
-                  <h4>Languages:&nbsp;</h4>
-                  <p>{data.languages.map(language => language.name).join(', ')}</p>
-              </li>
-            </ul>
-            {/* <div className="border">
+            <div className="details">
+              <ul>
+                <li>
+                    <h4>Native Name:&nbsp;</h4>
+                    <p>{data.nativeName}</p>
+                </li>
+                <li>
+                    <h4>Population:&nbsp;</h4>
+                    <p>{newPop}</p>
+                </li>
+                <li>
+                    <h4>Region:&nbsp;</h4>
+                    <p>{data.region}</p>
+                </li>
+                <li>
+                    <h4>Sub Region:&nbsp;</h4>
+                    <p>{data.subregion}</p>
+                </li>
+                <li>
+                    <h4>Capital:&nbsp;</h4>
+                    <p>{data.capital}</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                    <h4>Top Level Domain:&nbsp;</h4>
+                    <p>{data.topLevelDomain[0]}</p>
+                </li>
+                <li>
+                    <h4>Currencies:&nbsp;</h4>
+                    <p>{data.currencies.map(currency => currency.name).join(', ')}</p>
+                </li>
+                <li>
+                    <h4>Languages:&nbsp;</h4>
+                    <p>{data.languages.map(language => language.name).join(', ')}</p>
+                </li>
+              </ul>
+            </div>
+            <div className="borders">
               <h4>Border Countries:&nbsp;</h4>
-              
-            </div> */}
+              {data.borders.map(country => {
+                return <button className="borders-button button" key={uuidv4()} onClick={() => history.push(`/${country}`)}>
+                  <p>{country}</p>
+                </button>
+              })}
+            </div>
           </div>
         </div>
       </div>

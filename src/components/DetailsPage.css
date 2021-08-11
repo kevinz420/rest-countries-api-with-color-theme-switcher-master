@@ -1,12 +1,6 @@
 @import '../App.css';
 
-.details-page {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.button {
+.back-button {
     height: 50px;
     width: 200px;
     padding-left: 65px;
@@ -22,4 +16,45 @@
 
 .info img {
     width: 100%;
+}
+
+.details-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.info h2 {
+    font-size: 40px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.details li {
+    display: flex;
+    flex-direction: row;
+    padding: 7px 0px;
+}
+
+.details ul, .details h4, .details p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.borders-button {
+    height: 30px;
+    width: 100px;
+    justify-content: center
+}
+
+.borders {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
 }
