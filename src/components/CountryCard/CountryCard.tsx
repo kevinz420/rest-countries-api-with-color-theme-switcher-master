@@ -1,7 +1,7 @@
 import React from 'react'
 import './CountryCard.css'
 import { RouteComponentProps } from 'react-router-dom'
-import { RestCountries } from '../types'
+import { RestCountries } from '../../interfaces/types'
 
 interface CountryCardProps extends RouteComponentProps {
     data: RestCountries

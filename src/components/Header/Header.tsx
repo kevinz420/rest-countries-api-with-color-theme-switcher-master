@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import '../App.css'
+import '../../App.css'
 import './Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
-import { ThemeContext } from '../App'
+import { ThemeContext } from '../../App'
 
 interface HeaderProps {
     setTheme: (value: string) => void;

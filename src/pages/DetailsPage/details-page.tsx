@@ -3,9 +3,9 @@ import React, {useEffect, useState} from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { RestCountries } from '../types';
+import { RestCountries } from '../../interfaces/types';
 import { v4 as uuidv4 } from 'uuid';
-import './DetailsPage.css'
+import './details-page.css'
 
 interface DetailsPageProps extends RouteComponentProps<{code: 'string'}> {}
 

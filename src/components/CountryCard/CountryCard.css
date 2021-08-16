@@ -1,4 +1,4 @@
-@import '../App.css';
+@import '../../App.css';
 
 .light-mode .card {
     background-color: var(--dark-text);

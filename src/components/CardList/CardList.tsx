@@ -1,9 +1,9 @@
 import React from 'react'
-import {CountryCard} from './CountryCard'
+import {CountryCard} from '../CountryCard/CountryCard'
 import './CardList.css'
 import { v4 as uuidv4 } from 'uuid';
 import { withRouter } from 'react-router-dom';
-import {RestCountries} from '../types'
+import {RestCountries} from '../../interfaces/types'
 
 interface CardListProps {
     data: RestCountries[];

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Search } from './Search'
-import {CardList} from './CardList'
-import { RestCountries } from '../types';
+import { Search } from '../components/Search/Search'
+import {CardList} from '../components/CardList/CardList'
+import { RestCountries } from '../interfaces/types';
 
 interface HomeProps {
     data: RestCountries[];

@@ -15,6 +15,10 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 .light-mode {
   background-color: var(--light-background);
 }
@@ -59,8 +63,4 @@
 
 .light-mode .button {
   box-shadow: 0 0 10px  var(--light-glow);
-}
-
-ul {
-  list-style: none;
 }

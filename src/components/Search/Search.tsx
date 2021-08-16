@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Search.css'
 import Dropdown from 'react-bootstrap/Dropdown'
-import axios from 'axios'
+import {fetchAll, fetchBySearch, fetchByRegion} from '../../api/CountryAPI'
 import { v4 as uuidv4 } from 'uuid';
-import { RestCountries } from '../types'
+import { RestCountries } from '../../interfaces/types'
 
 interface SearchProps {
     // TODO: make an interface of the JSON response instead of using 'any'
@@ -17,49 +17,26 @@ export const Search: React.FC<SearchProps> = ({setData}) => {
     const [displayRegion, setDisplay] = useState('Filter by Region')
 
     useEffect(() => {
-        fetchAll()
+        handleRender
     }, [])
 
-    async function fetchAll() {
-        try {
-            const response = await axios.get('https://restcountries.eu/rest/v2/all');
-            setData(response.data)
-            console.log(response.data);
-          } catch (error) {
-            console.error(error);
-          }
+    async function handleRender() {
+        const data = await fetchAll()
+        data && setData(data)
     }
 
-    async function fetchBySearch(input: string) {
-        try {
-            const response = await axios.get(`https://restcountries.eu/rest/v2/name/${input}`);
-            setData(response.data)
-            console.log(response.data);
-          } catch (error) {
-            console.error(error);
-          }
-    }
-
-    async function fetchByRegion(region: string) {
-        try {
-            const response = await axios.get(`https://restcountries.eu/rest/v2/region/${region}`);
-            setData(response.data)
-            console.log(response.data);
-          } catch (error) {
-            console.error(error);
-          }
-    }
-
-    function handleSearch(e: React.FormEvent) {
+    async function handleSearch(e: React.FormEvent) {
         e.preventDefault();
         if (input.current === null) return
         const inputVal = input.current.value
-        fetchBySearch(inputVal)
+        const data = await fetchBySearch(inputVal)
+        data && setData(data)
     }
 
-    function handleSelection(region: string){
+    async function handleSelection(region: string){
         setDisplay(region)
-        fetchByRegion(region)
+        const data = await fetchByRegion(region)
+        data && setData(data)
     }
 
     return (

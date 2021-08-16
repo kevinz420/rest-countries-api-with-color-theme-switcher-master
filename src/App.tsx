@@ -1,10 +1,10 @@
 import { createContext, useState } from 'react';
 import './App.css';
-import { Header } from './components/Header'
-import {Home} from './components/Home'
+import { Header } from './components/Header/Header'
+import {Home} from './pages/Home'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import { DetailsPage } from './components/DetailsPage';
-import { RestCountries } from './types';
+import { DetailsPage } from './pages/DetailsPage/details-page';
+import { RestCountries } from './interfaces/types';
 
 export const ThemeContext = createContext('light-mode')
 
