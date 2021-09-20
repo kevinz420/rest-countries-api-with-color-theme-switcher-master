@@ -64,3 +64,9 @@ ul {
 .light-mode .button {
   box-shadow: 0 0 10px  var(--light-glow);
 }
+
+@media (max-width: 768px) {
+  .container {
+    margin: 40px 20px;
+  }
+}

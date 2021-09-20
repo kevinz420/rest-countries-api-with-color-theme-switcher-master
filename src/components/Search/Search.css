@@ -88,3 +88,15 @@
 .dark-mode #item:hover {
     background-color: var(--dark-background);
 }
+
+@media(max-width: 768px) {
+    .search {
+        width: 100%
+    }
+
+    .search-bar {
+        align-items: start;
+        flex-direction: column;
+        gap: 40px;
+    }
+}

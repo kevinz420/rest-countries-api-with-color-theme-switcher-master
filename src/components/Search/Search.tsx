@@ -17,7 +17,7 @@ export const Search: React.FC<SearchProps> = ({setData}) => {
     const [displayRegion, setDisplay] = useState('Filter by Region')
 
     useEffect(() => {
-        handleRender
+        handleRender()
     }, [])
 
     async function handleRender() {
